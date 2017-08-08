@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyBookkeeping.Models.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +11,8 @@ namespace MyBookkeeping.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var Item = new BookkeePingViewModels();
+            return View(Item);
         }
 
         public ActionResult About()
