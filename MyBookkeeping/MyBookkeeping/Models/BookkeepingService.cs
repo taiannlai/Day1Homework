@@ -19,6 +19,17 @@ namespace MyBookkeeping.Models
        
             return _db.AccountBook.ToList();
         }
+        public void Add(AccountBook mybookkeeping)
+        {
+            //mybookkeeping.Dateee = DateTime.Now;
+            mybookkeeping.Id = Guid.NewGuid();
+            _db.AccountBook.Add(mybookkeeping);
+        }
+
+        public void Save()
+        {
+            _db.SaveChanges();
+        }
 
 
     }

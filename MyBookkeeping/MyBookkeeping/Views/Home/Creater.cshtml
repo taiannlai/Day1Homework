@@ -1,0 +1,46 @@
+﻿@model MyBookkeeping.Models.AccountBook
+@{
+    Layout = "";
+}
+<div class="well">
+    @using (Html.BeginForm())
+    {
+
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true)
+            <div class="form-group">
+                @Html.LabelFor(model => model.Amounttt, htmlAttributes: new { @class = "col-sm-2 control-label" })
+                <div class="col-sm-10">
+                    @Html.EditorFor(model => model.Amounttt, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Amounttt)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Dateee, htmlAttributes: new { @class = "col-sm-2 control-label" })
+                <div class="col-sm-10">
+                    @Html.EditorFor(model => model.Dateee, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Dateee)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Remarkkk, htmlAttributes: new { @class = "col-sm-2 control-label" })
+                <div class="col-sm-10">
+                    @Html.EditorFor(model => model.Remarkkk, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Remarkkk)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-8 col-sm-4">
+                    <button type="submit" class="btn btn-default">送出</button>
+                </div>
+            </div>
+        </div>
+
+    }
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

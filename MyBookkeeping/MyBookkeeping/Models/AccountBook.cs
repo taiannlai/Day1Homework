@@ -11,13 +11,23 @@ namespace MyBookkeeping.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using System.Web.Mvc;
+
     public partial class AccountBook
     {
         public System.Guid Id { get; set; }
         public int Categoryyy { get; set; }
+        [Remote("MoneyValid", "Valid", ErrorMessage = "金額只能輸入正整數")]
+        [Display(Name = "金額")]
+        [DisplayFormat(DataFormatString = "{0:N0}")]
         public int Amounttt { get; set; }
+        [Remote("DateValid", "Valid", ErrorMessage = "日期不得大於今天")]
+        [Display(Name = "日期")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
         public System.DateTime Dateee { get; set; }
+        [Remote("RemarkValid", "Valid", ErrorMessage = "備註最多100個字元")]
+        [Display(Name = "備註")]
         public string Remarkkk { get; set; }
     }
 }
